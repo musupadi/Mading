@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Mading</string>
+    <string name="BASE_URL">http://192.168.0.17/mading/</string>
+    <string-array name="KELAS">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+    </string-array>
+    <string-array name="Hari">
+        <item>Senin</item>
+        <item>Selasa</item>
+        <item>Rabu</item>
+        <item>Kamis</item>
+        <item>Jumat</item>
+        <item>Sabtu</item>
+        <item>Minggu</item>
+    </string-array>
+</resources>
