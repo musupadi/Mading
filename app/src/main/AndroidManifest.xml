@@ -11,9 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.UjianActivity"
+        <activity android:name=".Activity.About.AboutActivity"
             android:parentActivityName=".Activity.MainActivity"
-            android:label="Jadwal Ujian"></activity>
+            android:label="Tentang Developer"></activity>
+        <activity
+            android:name=".Activity.UjianActivity"
+            android:label="Jadwal Ujian"
+            android:parentActivityName=".Activity.MainActivity" />
         <activity
             android:name=".Activity.PelajaranActivity"
             android:label="Jadwal Pelajaran"
@@ -22,9 +26,10 @@
             android:name=".Activity.BeritaActivity"
             android:label="Berita"
             android:parentActivityName=".Activity.MainActivity" />
-        <activity android:name=".Activity.SplashActivity" />
+        <activity android:name=".Activity.MainActivity"
+            android:theme="@style/AppThemeNoAction"/>
         <activity
-            android:name=".Activity.MainActivity"
+            android:name=".Activity.SplashActivity"
             android:theme="@style/AppThemeNoAction">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
