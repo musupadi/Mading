@@ -56,6 +56,34 @@ public class Musupadi {
         }
         return new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date);
     }
+    public String formatTanggal(String tanggal){
+        String Tanggal = "";
+        String tahun = tanggal.substring(0,3);
+        String bulan = tanggal.substring(5,6);
+        String hari = tanggal.substring(8,9);
+        Tanggal = hari+"/"+bulan+"/"+tahun;
+        return Tanggal;
+    }
+    public String getDataTanggal(String tanggal){
+        String today = dayName(tanggal,"dd/MM/yyyy");
+        String HariIni = "Senin";
+        if(today.equals("Monday")){
+            HariIni = "Senin";
+        }else if(today.equals("Tuesday")){
+            HariIni = "Selasa";
+        }else if(today.equals("Wednesday")){
+            HariIni = "Rabu";
+        }else if(today.equals("Thursday")){
+            HariIni = "Kamis";
+        }else if(today.equals("Friday")){
+            HariIni = "Jumat";
+        }else if(today.equals("Saturday")){
+            HariIni = "Sabtu";
+        }else if(today.equals("Sunday")){
+            HariIni = "Minggu";
+        }
+        return HariIni;
+    }
     public String getToday(){
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();

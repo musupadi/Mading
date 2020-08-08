@@ -2,10 +2,14 @@
     <string name="app_name">Mading</string>
     <string name="BASE_URL">http://192.168.0.17/mading/</string>
     <string-array name="KELAS">
-        <item>A</item>
-        <item>B</item>
-        <item>C</item>
-        <item>D</item>
+        <item>I</item>
+        <item>II</item>
+        <item>III</item>
+        <item>IV</item>
+    </string-array>
+    <string-array name="Program">
+        <item>Pagi</item>
+        <item>Sore</item>
     </string-array>
     <string-array name="Hari">
         <item>Senin</item>

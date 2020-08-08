@@ -62,5 +62,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Ujian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,UjianActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

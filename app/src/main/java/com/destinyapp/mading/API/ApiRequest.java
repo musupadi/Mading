@@ -24,13 +24,21 @@ public interface ApiRequest {
 
     @FormUrlEncoded
     @POST("Data/Kelas")
-    Call<ResponseModel> Kelas(@Field("id_jurusan") String id_jurusan);
+    Call<ResponseModel> Kelas(@Field("id_jurusan") String id_jurusan,
+                              @Field("program") String program,
+                              @Field("class") String classy);
 
     @FormUrlEncoded
     @POST("Jadwal/Pelajaran")
     Call<ResponseModel> JadwalPelajaran(@Field("id_jurusan") String id_jurusan,
                                         @Field("id_kelas") String id_kelas,
                                         @Field("hari") String hari);
+
+    @FormUrlEncoded
+    @POST("Jadwal/Ujian")
+    Call<ResponseModel> JadwalUjian(@Field("id_jurusan") String id_jurusan,
+                                        @Field("id_kelas") String id_kelas,
+                                        @Field("tanggal") String tanggal);
 
     @FormUrlEncoded
     @POST("Checkabsen")

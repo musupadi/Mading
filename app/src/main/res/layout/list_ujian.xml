@@ -15,7 +15,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="180dp"
         android:padding="5dp"
         android:id="@+id/LayoutCardView"
         android:orientation="vertical"
@@ -57,15 +57,15 @@
                         android:textColor="@color/colorBlack"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Jam"
+                        android:text="Jenis"
                         android:layout_weight="1"/>
                     <TextView
                         android:textColor="@color/colorBlack"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=": Dosen"
+                        android:text=": Jenis"
                         android:layout_weight="1"
-                        android:id="@+id/tvJamke"/>
+                        android:id="@+id/tvJenis"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -120,6 +120,24 @@
                         android:text=": 08:00"
                         android:layout_weight="1"
                         android:id="@+id/tvSelesai"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=": Senin,15-Januari-1994"
+                        android:layout_weight="1"
+                        android:id="@+id/tvTanggal"/>
                 </LinearLayout>
             </LinearLayout>
 

@@ -117,45 +117,6 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/linearAbout"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_rounded_primary"
-                        android:layout_margin="10dp"
-                        android:padding="10dp">
-                        <LinearLayout
-                            android:layout_weight="1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:background="@drawable/button_rounded_white">
-                            <com.airbnb.lottie.LottieAnimationView
-                                android:layout_weight="1"
-                                app:lottie_loop="true"
-                                app:lottie_fileName="student.json"
-                                app:lottie_autoPlay="true"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-                            </com.airbnb.lottie.LottieAnimationView>
-                            <TextView
-                                android:textSize="15sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="3"
-                                android:text="About"
-                                android:textColor="@color/colorBlack"
-                                android:textStyle="bold"
-                                android:gravity="center"/>
-                        </LinearLayout>
-                    </LinearLayout>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:orientation="horizontal">
-                    <LinearLayout
                         android:id="@+id/linearPelajaran"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -188,6 +149,13 @@
                                 android:gravity="center"/>
                         </LinearLayout>
                     </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal">
+
                     <LinearLayout
                         android:id="@+id/linearUjian"
                         android:layout_width="match_parent"
@@ -218,6 +186,39 @@
                                 android:textColor="@color/colorBlack"
                                 android:textStyle="bold"
                                 android:textSize="15sp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/linearAbout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_rounded_primary"
+                        android:layout_margin="10dp"
+                        android:padding="10dp">
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:background="@drawable/button_rounded_white">
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:layout_weight="1"
+                                app:lottie_loop="true"
+                                app:lottie_fileName="student.json"
+                                app:lottie_autoPlay="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </com.airbnb.lottie.LottieAnimationView>
+                            <TextView
+                                android:textSize="15sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:text="About"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"
                                 android:gravity="center"/>
                         </LinearLayout>
                     </LinearLayout>

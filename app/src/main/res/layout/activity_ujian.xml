@@ -64,22 +64,6 @@
                         android:id="@+id/spinnerJurusan"
                         android:entries="@array/KELAS"/>
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Pilih Hari"
-                        android:textColor="@color/colorBlack"/>
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/spinnerHari"
-                        android:entries="@array/Hari"/>
-                </LinearLayout>
             </LinearLayout>
 
             <TextView
@@ -143,6 +127,21 @@
 
 
             </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_rounded_white">
+            <Button
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pilih Tanggal"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/btnTanggal"
+                android:background="@drawable/button_rounded_primary"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

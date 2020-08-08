@@ -48,6 +48,14 @@ public class DataModel {
     @Expose
     public String nama_kelas;
 
+    @SerializedName("program")
+    @Expose
+    public String program;
+
+    @SerializedName("class")
+    @Expose
+    public String Classy;
+
     //Matkul
     @SerializedName("id_matkul")
     @Expose
@@ -103,6 +111,28 @@ public class DataModel {
     @Expose
     public String akhir;
 
+    @SerializedName("selesai")
+    @Expose
+    public String selesai;
+
+    //Ruang
+    @SerializedName("id_ruang")
+    @Expose
+    public String id_ruang;
+
+    @SerializedName("nama_ruang")
+    @Expose
+    public String nama_ruang;
+
+    //Dosen
+    @SerializedName("id_dosen")
+    @Expose
+    public String id_dosen;
+
+    @SerializedName("nama_dosen")
+    @Expose
+    public String nama_dosen;
+
     //Jadwal Ujian
     @SerializedName("id_ujian")
     @Expose
@@ -111,6 +141,14 @@ public class DataModel {
     @SerializedName("tanggal")
     @Expose
     public String tanggal;
+
+    @SerializedName("jenis_ujian")
+    @Expose
+    public String jenis_ujian;
+
+    @SerializedName("status")
+    @Expose
+    public String status;
 
     public String getId_berita() {
         return id_berita;
@@ -190,6 +228,22 @@ public class DataModel {
 
     public void setNama_kelas(String nama_kelas) {
         this.nama_kelas = nama_kelas;
+    }
+
+    public String getProgram() {
+        return program;
+    }
+
+    public void setProgram(String program) {
+        this.program = program;
+    }
+
+    public String getClassy() {
+        return Classy;
+    }
+
+    public void setClassy(String classy) {
+        Classy = classy;
     }
 
     public String getId_matkul() {
@@ -280,6 +334,62 @@ public class DataModel {
         this.hari = hari;
     }
 
+    public String getMulai() {
+        return mulai;
+    }
+
+    public void setMulai(String mulai) {
+        this.mulai = mulai;
+    }
+
+    public String getAkhir() {
+        return akhir;
+    }
+
+    public void setAkhir(String akhir) {
+        this.akhir = akhir;
+    }
+
+    public String getSelesai() {
+        return selesai;
+    }
+
+    public void setSelesai(String selesai) {
+        this.selesai = selesai;
+    }
+
+    public String getId_ruang() {
+        return id_ruang;
+    }
+
+    public void setId_ruang(String id_ruang) {
+        this.id_ruang = id_ruang;
+    }
+
+    public String getNama_ruang() {
+        return nama_ruang;
+    }
+
+    public void setNama_ruang(String nama_ruang) {
+        this.nama_ruang = nama_ruang;
+    }
+
+    public String getId_dosen() {
+        return id_dosen;
+    }
+
+    public void setId_dosen(String id_dosen) {
+        this.id_dosen = id_dosen;
+    }
+
+    public String getNama_dosen() {
+        return nama_dosen;
+    }
+
+    public void setNama_dosen(String nama_dosen) {
+        this.nama_dosen = nama_dosen;
+    }
+
     public String getId_ujian() {
         return id_ujian;
     }
@@ -296,19 +406,19 @@ public class DataModel {
         this.tanggal = tanggal;
     }
 
-    public String getMulai() {
-        return mulai;
+    public String getJenis_ujian() {
+        return jenis_ujian;
     }
 
-    public void setMulai(String mulai) {
-        this.mulai = mulai;
+    public void setJenis_ujian(String jenis_ujian) {
+        this.jenis_ujian = jenis_ujian;
     }
 
-    public String getAkhir() {
-        return akhir;
+    public String getStatus() {
+        return status;
     }
 
-    public void setAkhir(String akhir) {
-        this.akhir = akhir;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -11,13 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.PelajaranActivity"
+        <activity android:name=".Activity.UjianActivity"
             android:parentActivityName=".Activity.MainActivity"
-            android:label="Jadwal Pelajaran"></activity>
+            android:label="Jadwal Ujian"></activity>
+        <activity
+            android:name=".Activity.PelajaranActivity"
+            android:label="Jadwal Pelajaran"
+            android:parentActivityName=".Activity.MainActivity" />
         <activity
             android:name=".Activity.BeritaActivity"
-            android:parentActivityName=".Activity.MainActivity"
-            android:label="Berita"/>
+            android:label="Berita"
+            android:parentActivityName=".Activity.MainActivity" />
         <activity android:name=".Activity.SplashActivity" />
         <activity
             android:name=".Activity.MainActivity"

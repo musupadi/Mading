@@ -11,21 +11,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.destinyapp.mading.Model.DataModel;
 import com.destinyapp.mading.Model.Musupadi;
 import com.destinyapp.mading.R;
 
 import java.util.List;
 
-public class AdapterPelajaran extends RecyclerView.Adapter<AdapterPelajaran.HolderData> {
+public class AdapterUjian extends RecyclerView.Adapter<AdapterUjian.HolderData> {
     private List<DataModel> mList;
     private Context ctx;
     Dialog myDialog;
 
     String username,nama,email,profile,alamat,level;
     Musupadi method;
-    public AdapterPelajaran (Context ctx,List<DataModel> mList){
+    public AdapterUjian (Context ctx,List<DataModel> mList){
         this.ctx = ctx;
         this.mList = mList;
     }
@@ -33,21 +32,22 @@ public class AdapterPelajaran extends RecyclerView.Adapter<AdapterPelajaran.Hold
     @NonNull
     @Override
     public HolderData onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View layout = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_pelajaran,viewGroup,false);
+        View layout = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_ujian,viewGroup,false);
         HolderData holder = new HolderData(layout);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterPelajaran.HolderData holderData, int posistion) {
+    public void onBindViewHolder(@NonNull AdapterUjian.HolderData holderData, int posistion) {
         DataModel dm = mList.get(posistion);
         method=new Musupadi();
         holderData.matakuliah.setText(dm.getNama_matkul());
         holderData.mulai.setText(": "+dm.getMulai());
-        holderData.selesai.setText(": "+dm.getAkhir());
+        holderData.selesai.setText(": "+dm.getSelesai());
         holderData.dosen.setText(dm.getNama_dosen());
         holderData.Kelas.setText(": "+dm.getProgram()+" "+dm.getClassy()+"-"+dm.getNama_kelas());
-        holderData.jamke.setText(": "+String.valueOf(posistion+1));
+        holderData.jenis.setText(": "+dm.getJenis_ujian());
+        holderData.tanggal.setText(": "+method.getDataTanggal(method.formatTanggal(dm.getTanggal()))+", "+dm.getTanggal());
         holderData.dm=dm;
     }
 
@@ -57,7 +57,7 @@ public class AdapterPelajaran extends RecyclerView.Adapter<AdapterPelajaran.Hold
     }
 
     class HolderData extends RecyclerView.ViewHolder{
-        TextView matakuliah,mulai,selesai,dosen,jamke,Kelas;
+        TextView matakuliah,mulai,selesai,dosen,jenis,Kelas,tanggal;
         ImageView gambar;
         DataModel dm;
         HolderData(View v){
@@ -67,7 +67,9 @@ public class AdapterPelajaran extends RecyclerView.Adapter<AdapterPelajaran.Hold
             Kelas = v.findViewById(R.id.tvKelas);
             selesai = v.findViewById(R.id.tvSelesai);
             dosen = v.findViewById(R.id.tvDosen);
-            jamke = v.findViewById(R.id.tvJamke);
+            jenis = v.findViewById(R.id.tvJenis);
+            tanggal = v.findViewById(R.id.tvTanggal);
         }
     }
 }
+
