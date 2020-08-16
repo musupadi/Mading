@@ -10,6 +10,14 @@ import java.util.Date;
 import java.util.Locale;
 
 public class Musupadi {
+    public String LinkJadwalPelajaran(String idKelas,String idJurusan){
+        String link = "http://mading.rumahcantikratu.com/Jadwal/Pdfmobile?id_jurusan="+idJurusan+"&id_kelas="+idKelas+"";
+        return link;
+    }
+    public String LinkUjian(){
+        String link = "http://mading.rumahcantikratu.com/Ujian/PDF";
+        return link;
+    }
     public String MagicRP(double nilai){
         Locale localeID = new Locale("in", "ID");
         NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);

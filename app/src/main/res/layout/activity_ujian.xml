@@ -10,14 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <com.airbnb.lottie.LottieAnimationView
-            android:layout_weight="1"
-            app:lottie_loop="true"
-            app:lottie_fileName="animation reverse orange wave.json"
-            app:lottie_autoPlay="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY">
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="animation reverse orange wave.json"
+            app:lottie_loop="true">
 
         </com.airbnb.lottie.LottieAnimationView>
     </LinearLayout>
@@ -133,8 +134,10 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_margin="5dp"
-            android:background="@drawable/button_rounded_white">
+            android:background="@drawable/button_rounded_white"
+            android:orientation="horizontal">
             <Button
+                android:layout_weight="1"
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -142,8 +145,16 @@
                 android:textColor="@color/colorWhite"
                 android:id="@+id/btnTanggal"
                 android:background="@drawable/button_rounded_primary"/>
+            <Button
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PDF"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/btnDownload"
+                android:background="@drawable/button_rounded_danger"/>
         </LinearLayout>
-
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

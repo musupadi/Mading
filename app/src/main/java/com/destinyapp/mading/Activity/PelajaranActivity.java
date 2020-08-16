@@ -5,9 +5,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +45,7 @@ public class PelajaranActivity extends AppCompatActivity {
     Spinner Jurusan,Kelas,Hari,Program,Class;
     RecyclerView recyclerView;
     TextView IdJurusan,IDKelas;
+    Button download;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +58,9 @@ public class PelajaranActivity extends AppCompatActivity {
         IDKelas = findViewById(R.id.idKelas);
         Program = findViewById(R.id.spinnerProgram);
         Class = findViewById(R.id.spinnerClass);
+        download = findViewById(R.id.btnDownload);
 
-        Musupadi method = new Musupadi();
+        final Musupadi method = new Musupadi();
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
         if (method.getToday().equals("Senin")){
@@ -115,7 +120,6 @@ public class PelajaranActivity extends AppCompatActivity {
                             }
                         });
                         logic(IdJurusan.getText().toString(),IDKelas.getText().toString(),Hari.getSelectedItem().toString());
-
                     }
 
                     @Override
@@ -127,6 +131,14 @@ public class PelajaranActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(method.LinkJadwalPelajaran(IDKelas.getText().toString(),IdJurusan.getText().toString())));
+                startActivity(browserIntent);
 
             }
         });

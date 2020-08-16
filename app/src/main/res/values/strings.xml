@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Mading</string>
     <string name="about">Aplikasi majalah dinding fakultas teknik dan komputer di universitas harapan Medan merupakan sebuah aplikasi yang di bangun dengan tujuan untuk menjadi media informasi seputar kampus seperti berita terbaru kampus , Jadwal Pelajaran Kuliah dan Jadwal Ujian Semester</string>
-    <string name="BASE_URL">http://192.168.0.17/mading/</string>
+    <string name="BASE_URL">http://mading.rumahcantikratu.com/</string>
     <string-array name="KELAS">
         <item>I</item>
         <item>II</item>

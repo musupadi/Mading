@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -45,7 +47,7 @@ public class UjianActivity extends AppCompatActivity implements DatePickerDialog
     Spinner Jurusan,Kelas,Hari,Program,Class;
     RecyclerView recyclerView;
     TextView IdJurusan,IDKelas;
-    Button tanggal;
+    Button tanggal,download;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +61,8 @@ public class UjianActivity extends AppCompatActivity implements DatePickerDialog
         Program = findViewById(R.id.spinnerProgram);
         Class = findViewById(R.id.spinnerClass);
         tanggal = findViewById(R.id.btnTanggal);
-        Musupadi method = new Musupadi();
+        download = findViewById(R.id.btnDownload);
+        final Musupadi method = new Musupadi();
         getJurusan();
         aJurusan = new AdapterSpinnerJurusan(UjianActivity.this,mItems);
         Jurusan.setAdapter(aJurusan);
@@ -99,6 +102,13 @@ public class UjianActivity extends AppCompatActivity implements DatePickerDialog
             @Override
             public void onClick(View view) {
                 showDatePicker();
+            }
+        });
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(method.LinkUjian()));
+                startActivity(browserIntent);
             }
         });
     }
