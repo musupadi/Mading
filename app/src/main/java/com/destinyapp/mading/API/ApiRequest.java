@@ -22,6 +22,9 @@ public interface ApiRequest {
     @GET("Berita/AllBerita")
     Call<ResponseModel> AllBerita();
 
+    @GET("Berita/Berita")
+    Call<ResponseModel> Berita();
+
     @FormUrlEncoded
     @POST("Data/Kelas")
     Call<ResponseModel> Kelas(@Field("id_jurusan") String id_jurusan,

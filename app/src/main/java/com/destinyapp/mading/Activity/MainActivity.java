@@ -1,10 +1,14 @@
 package com.destinyapp.mading.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView ivHeader;
     TextView tvHeader,tvTgl;
     LinearLayout Berita,About,Pelajaran,Ujian;
+    CardView feedback;
+    Dialog myDialog;
+    EditText etFeedback;
+    Button submit,close;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +39,12 @@ public class MainActivity extends AppCompatActivity {
         About=findViewById(R.id.linearAbout);
         Pelajaran=findViewById(R.id.linearPelajaran);
         Ujian=findViewById(R.id.linearUjian);
-
-
+        feedback=findViewById(R.id.cardFeedback);
+        myDialog = new Dialog(this);
+        myDialog.setContentView(R.layout.dialog_feedback);
+        etFeedback = myDialog.findViewById(R.id.etFeedback);
+        submit = myDialog.findViewById(R.id.btnSubmit);
+        close = myDialog.findViewById(R.id.btnClose);
         Calendar rightNow = Calendar.getInstance();
         int hour = rightNow.get(Calendar.HOUR_OF_DAY);
         if (hour > 4 && hour < 11){
@@ -52,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         Berita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,BeritaActivity.class);
+                Intent intent = new Intent(MainActivity.this,BeritaLimitActivity.class);
                 startActivity(intent);
             }
         });
@@ -75,6 +87,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AboutActivity.class);
                 startActivity(intent);
+            }
+        });
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.show();
+            }
+        });
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.hide();
             }
         });
     }
