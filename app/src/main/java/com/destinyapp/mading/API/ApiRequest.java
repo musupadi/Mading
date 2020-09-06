@@ -25,11 +25,19 @@ public interface ApiRequest {
     @GET("Berita/Berita")
     Call<ResponseModel> Berita();
 
+    @GET("Data/TahunAjaran")
+    Call<ResponseModel> TahunAjaran();
+
     @FormUrlEncoded
     @POST("Data/Kelas")
     Call<ResponseModel> Kelas(@Field("id_jurusan") String id_jurusan,
                               @Field("program") String program,
                               @Field("class") String classy);
+
+    @FormUrlEncoded
+    @POST("Feedback")
+    Call<ResponseModel> FeedBack(@Field("feedback") String feedback,
+                                    @Field("tanggal") String tanggal);
 
     @FormUrlEncoded
     @POST("Jadwal/Pelajaran")
@@ -41,7 +49,8 @@ public interface ApiRequest {
     @POST("Jadwal/Ujian")
     Call<ResponseModel> JadwalUjian(@Field("id_jurusan") String id_jurusan,
                                         @Field("id_kelas") String id_kelas,
-                                        @Field("tanggal") String tanggal);
+                                        @Field("tanggal") String tanggal,
+                                        @Field("jenis_ujian") String jenis_ujian);
 
     @FormUrlEncoded
     @POST("Checkabsen")

@@ -11,9 +11,17 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.BeritaLimitActivity"
+        <activity
+            android:name=".Activity.DetailBerita"
+            android:label="Detail Berita"
+            android:parentActivityName=".Activity.BeritaActivity"></activity>
+        <activity
+            android:name=".Activity.ListPelajaranDetailActivity"
+            android:parentActivityName=".Activity.PelajaranActivity" />
+        <activity
+            android:name=".Activity.BeritaLimitActivity"
             android:label="Berita"
-            android:parentActivityName=".Activity.MainActivity"></activity>
+            android:parentActivityName=".Activity.MainActivity" />
         <activity
             android:name=".Activity.About.AboutActivity"
             android:label="Tentang Developer"
@@ -24,7 +32,6 @@
             android:parentActivityName=".Activity.MainActivity" />
         <activity
             android:name=".Activity.PelajaranActivity"
-            android:label="Jadwal Pelajaran"
             android:parentActivityName=".Activity.MainActivity" />
         <activity
             android:name=".Activity.BeritaActivity"

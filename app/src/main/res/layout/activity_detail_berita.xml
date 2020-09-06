@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.DetailBerita">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_weight="1"
+            app:lottie_loop="true"
+            app:lottie_fileName="animation reverse orange wave.json"
+            app:lottie_autoPlay="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY">
+
+        </com.airbnb.lottie.LottieAnimationView>
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        card_view:cardCornerRadius="4dp">
+        <ScrollView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:background="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/logo_univ"
+                    android:id="@+id/ivGambar"/>
+                <TextView
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Judul"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:id="@+id/tvJudul"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Berita"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    android:id="@+id/tvBerita"/>
+            </LinearLayout>
+
+
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

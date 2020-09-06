@@ -8,6 +8,10 @@
         <item>III</item>
         <item>IV</item>
     </string-array>
+    <string-array name="JENIS_UJIAN">
+        <item>UAS</item>
+        <item>UTS</item>
+    </string-array>
     <string-array name="Program">
         <item>Pagi</item>
         <item>Sore</item>

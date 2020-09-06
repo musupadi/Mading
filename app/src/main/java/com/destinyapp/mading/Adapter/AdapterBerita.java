@@ -2,6 +2,7 @@ package com.destinyapp.mading.Adapter;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.destinyapp.mading.Activity.DetailBerita;
 import com.destinyapp.mading.Model.DataModel;
 import com.destinyapp.mading.Model.Musupadi;
 import com.destinyapp.mading.R;
@@ -45,7 +48,7 @@ public class AdapterBerita extends RecyclerView.Adapter<AdapterBerita.HolderData
 
     @Override
     public void onBindViewHolder(@NonNull AdapterBerita.HolderData holderData, int posistion) {
-        DataModel dm = mList.get(posistion);
+        final DataModel dm = mList.get(posistion);
         method=new Musupadi();
         holderData.judul.setText(dm.getJudul_berita());
         holderData.berita.setText(method.MiniDescription(dm.getBerita()));
@@ -54,6 +57,16 @@ public class AdapterBerita extends RecyclerView.Adapter<AdapterBerita.HolderData
         Glide.with(ctx)
                 .load(URL)
                 .into(holderData.gambar);
+        holderData.LayoutCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goInput = new Intent(ctx, DetailBerita.class);
+                goInput.putExtra("JUDUL",dm.getJudul_berita());
+                goInput.putExtra("BERITA",dm.getBerita());
+                goInput.putExtra("GAMBAR",dm.getGambar());
+                ctx.startActivities(new Intent[]{goInput});
+            }
+        });
         holderData.dm=dm;
     }
 
@@ -66,11 +79,13 @@ public class AdapterBerita extends RecyclerView.Adapter<AdapterBerita.HolderData
         TextView judul,berita;
         ImageView gambar;
         DataModel dm;
+        CardView LayoutCardView;
         HolderData(View v){
             super(v);
             judul = v.findViewById(R.id.tvJudul);
             berita = v.findViewById(R.id.tvBerita);
             gambar = v.findViewById(R.id.ivGambar);
+            LayoutCardView = v.findViewById(R.id.LayoutCardView);
         }
     }
 }

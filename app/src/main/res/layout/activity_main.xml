@@ -36,6 +36,11 @@
                 android:id="@+id/card_view"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                card_view:cardElevation="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
                 card_view:cardCornerRadius="4dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -103,171 +108,186 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:id="@+id/linearBerita"
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_rounded_primary"
-                        android:layout_margin="10dp"
-                        android:padding="10dp">
+                        card_view:cardElevation="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        card_view:cardCornerRadius="4dp"
+                        android:layout_weight="1">
                         <LinearLayout
-                            android:layout_weight="1"
+                            android:id="@+id/linearBerita"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:background="@drawable/button_rounded_white">
-                            <com.airbnb.lottie.LottieAnimationView
+                            android:layout_weight="1">
+                            <LinearLayout
                                 android:layout_weight="1"
-                                app:lottie_loop="true"
-                                app:lottie_fileName="news.json"
-                                app:lottie_autoPlay="true"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-                            </com.airbnb.lottie.LottieAnimationView>
-                            <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="3"
-                                android:text="Berita"
-                                android:textColor="@color/colorBlack"
-                                android:textStyle="bold"
-                                android:textSize="15sp"
-                                android:gravity="center"/>
+                                android:orientation="vertical">
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:layout_weight="1"
+                                    app:lottie_loop="true"
+                                    app:lottie_fileName="news.json"
+                                    app:lottie_autoPlay="true"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                </com.airbnb.lottie.LottieAnimationView>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="3"
+                                    android:text="Berita"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"
+                                    android:gravity="center"/>
+                            </LinearLayout>
                         </LinearLayout>
-                    </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                    <LinearLayout
-                        android:id="@+id/linearPelajaran"
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_rounded_primary"
-                        android:layout_margin="10dp"
-                        android:padding="10dp">
+                        card_view:cardElevation="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        card_view:cardCornerRadius="4dp"
+                        android:layout_weight="1">
                         <LinearLayout
-                            android:layout_weight="1"
+                            android:id="@+id/linearPelajaran"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:background="@drawable/button_rounded_white">
-                            <com.airbnb.lottie.LottieAnimationView
+                            android:layout_weight="1">
+                            <LinearLayout
                                 android:layout_weight="1"
-                                app:lottie_loop="true"
-                                app:lottie_fileName="note.json"
-                                app:lottie_autoPlay="true"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-                            </com.airbnb.lottie.LottieAnimationView>
-                            <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="3"
-                                android:text="Jadwal Pelajaran"
-                                android:textColor="@color/colorBlack"
-                                android:textStyle="bold"
-                                android:textSize="15sp"
-                                android:gravity="center"/>
+                                android:orientation="vertical">
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:layout_weight="1"
+                                    app:lottie_loop="true"
+                                    app:lottie_fileName="note.json"
+                                    app:lottie_autoPlay="true"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                </com.airbnb.lottie.LottieAnimationView>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="3"
+                                    android:text="Jadwal Pelajaran"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"
+                                    android:gravity="center"/>
+                            </LinearLayout>
                         </LinearLayout>
-                    </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
 
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:orientation="horizontal">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        card_view:cardElevation="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        card_view:cardCornerRadius="4dp"
+                        android:layout_weight="1">
+                        <LinearLayout
+                            android:id="@+id/linearUjian"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:layout_weight="1"
+                                    app:lottie_loop="true"
+                                    app:lottie_fileName="gaduation.json"
+                                    app:lottie_autoPlay="true"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                </com.airbnb.lottie.LottieAnimationView>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="3"
+                                    android:text="Jadwal Ujian"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        card_view:cardElevation="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        card_view:cardCornerRadius="4dp"
+                        android:layout_weight="1">
+                        <LinearLayout
+                            android:id="@+id/linearAbout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:layout_weight="1"
+                                    app:lottie_loop="true"
+                                    app:lottie_fileName="student.json"
+                                    app:lottie_autoPlay="true"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                </com.airbnb.lottie.LottieAnimationView>
+                                <TextView
+                                    android:textSize="15sp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="3"
+                                    android:text="About"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                    <LinearLayout
-                        android:id="@+id/linearUjian"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_rounded_primary"
-                        android:layout_margin="10dp"
-                        android:padding="10dp">
-                        <LinearLayout
-                            android:layout_weight="1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:background="@drawable/button_rounded_white">
-                            <com.airbnb.lottie.LottieAnimationView
-                                android:layout_weight="1"
-                                app:lottie_loop="true"
-                                app:lottie_fileName="gaduation.json"
-                                app:lottie_autoPlay="true"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-                            </com.airbnb.lottie.LottieAnimationView>
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="3"
-                                android:text="Jadwal Ujian"
-                                android:textColor="@color/colorBlack"
-                                android:textStyle="bold"
-                                android:textSize="15sp"
-                                android:gravity="center"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/linearAbout"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_rounded_primary"
-                        android:layout_margin="10dp"
-                        android:padding="10dp">
-                        <LinearLayout
-                            android:layout_weight="1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:background="@drawable/button_rounded_white">
-                            <com.airbnb.lottie.LottieAnimationView
-                                android:layout_weight="1"
-                                app:lottie_loop="true"
-                                app:lottie_fileName="student.json"
-                                app:lottie_autoPlay="true"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-                            </com.airbnb.lottie.LottieAnimationView>
-                            <TextView
-                                android:textSize="15sp"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="3"
-                                android:text="About"
-                                android:textColor="@color/colorBlack"
-                                android:textStyle="bold"
-                                android:gravity="center"/>
-                        </LinearLayout>
-                    </LinearLayout>
+
                 </LinearLayout>
             </LinearLayout>
-            <androidx.cardview.widget.CardView
+            <Button
+                android:layout_margin="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                card_view:cardCornerRadius="4dp"
-                android:layout_margin="10dp"
-                android:id="@+id/cardFeedback">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Feed Back"
-                        android:textSize="30sp"
-                        android:layout_margin="10dp"
-                        android:textColor="@color/colorWhite"
-                        android:textStyle="bold"
-                        android:textAlignment="center"
-                        android:gravity="center_horizontal" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                android:id="@+id/cardFeedback"
+                android:text="Feedback"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorWhite"/>
         </LinearLayout>
     </ScrollView>
 

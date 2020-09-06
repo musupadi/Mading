@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,18 +12,28 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.destinyapp.mading.API.ApiRequest;
+import com.destinyapp.mading.API.RetroServer;
 import com.destinyapp.mading.Activity.About.AboutActivity;
+import com.destinyapp.mading.Model.Musupadi;
+import com.destinyapp.mading.Model.ResponseModel;
 import com.destinyapp.mading.R;
 
 import java.util.Calendar;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     ImageView ivHeader;
     TextView tvHeader,tvTgl;
     LinearLayout Berita,About,Pelajaran,Ujian;
-    CardView feedback;
+    Button feedback;
     Dialog myDialog;
     EditText etFeedback;
     Button submit,close;
@@ -99,6 +110,36 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 myDialog.hide();
+            }
+        });
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ProgressDialog pd = new ProgressDialog(MainActivity.this);
+                pd.setMessage("Mengirimkan Feedback");
+                pd.show();
+                Musupadi musupadi = new Musupadi();
+                ApiRequest api = RetroServer.getClient().create(ApiRequest.class);
+                Call<ResponseModel> data = api.FeedBack(etFeedback.getText().toString(),musupadi.getThisDate());
+                data.enqueue(new Callback<ResponseModel>() {
+                    @Override
+                    public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                        try {
+                            Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                            pd.hide();
+                        }catch (Exception e){
+                            pd.hide();
+                            Toast.makeText(MainActivity.this, "Terjadi kesalahan pada "+e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                        pd.hide();
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseModel> call, Throwable t) {
+                        pd.hide();
+                        Toast.makeText(MainActivity.this, "Koneksi Gagal", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }

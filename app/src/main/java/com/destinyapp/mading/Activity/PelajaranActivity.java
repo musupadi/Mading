@@ -49,6 +49,25 @@ public class PelajaranActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ApiRequest api = RetroServer.getClient().create(ApiRequest.class);
+        Call<ResponseModel> data = api.TahunAjaran();
+        data.enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                try {
+                    getSupportActionBar().setTitle("Jadwal Kuliah T/A "+response.body().getData().get(0).tahun);
+                }catch (Exception e){
+                    getSupportActionBar().setTitle("Jadwal Kuliah T/A 2020/2021");
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                getSupportActionBar().setTitle("Jadwal Kuliah T/A 2020/2021");
+                Toast.makeText(PelajaranActivity.this, "Koneksi Gagal", Toast.LENGTH_SHORT).show();
+            }
+        });
         setContentView(R.layout.activity_pelajaran);
         Jurusan = findViewById(R.id.spinnerJurusan);
         Kelas = findViewById(R.id.spinnerKelas);
@@ -137,9 +156,13 @@ public class PelajaranActivity extends AppCompatActivity {
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(method.LinkJadwalPelajaran(IDKelas.getText().toString(),IdJurusan.getText().toString())));
+//                Intent goInput = new Intent(PelajaranActivity.this, ListPelajaranDetailActivity.class);
+//                goInput.putExtra("JURUSAN",IdJurusan.getText().toString());
+//                goInput.putExtra("KELAS",IDKelas.getText().toString());
+//                goInput.putExtra("HARI",Hari.getSelectedItem().toString());
+//                startActivities(new Intent[]{goInput});
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(method.LinkJadwalPelajaran(IDKelas.getText().toString(),IdJurusan.getText().toString(),Hari.getSelectedItem().toString())));
                 startActivity(browserIntent);
-
             }
         });
 //        Toast.makeText(PelajaranActivity.this, IdJurusan.getText().toString(), Toast.LENGTH_SHORT).show();

@@ -150,6 +150,19 @@ public class DataModel {
     @Expose
     public String status;
 
+    //TahunAJaran
+    @SerializedName("tahun")
+    @Expose
+    public String tahun;
+
+    public String getTahun() {
+        return tahun;
+    }
+
+    public void setTahun(String tahun) {
+        this.tahun = tahun;
+    }
+
     public String getId_berita() {
         return id_berita;
     }

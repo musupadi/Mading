@@ -37,72 +37,75 @@
             android:text="Kelas"
             android:id="@+id/idKelas"
             android:visibility="invisible"/>
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/button_rounded_white"
-            android:layout_margin="10dp">
+            card_view:cardElevation="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="4dp"
+            card_view:cardCornerRadius="4dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:layout_margin="10dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
-                    <TextView
+                    android:orientation="horizontal">
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Pilih Jurusan"
-                        android:textColor="@color/colorBlack"/>
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:id="@+id/spinnerJurusan"
-                        android:entries="@array/KELAS"/>
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Pilih Jurusan"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorBlack"/>
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/spinnerJurusan"
+                            android:entries="@array/KELAS"/>
+                    </LinearLayout>
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_weight="1">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Pilih Hari"
+                        android:layout_weight="1"
                         android:textColor="@color/colorBlack"/>
                     <Spinner
+                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/spinnerHari"
                         android:entries="@array/Hari"/>
                 </LinearLayout>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pilih Kelas"
-                android:textColor="@color/colorBlack"/>
-            <LinearLayout
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_weight="1">
                     <TextView
+                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Program"
                         android:textColor="@color/colorBlack"/>
                     <Spinner
+                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/spinnerProgram"
@@ -111,14 +114,16 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_weight="1">
                     <TextView
+                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Kelas"
+                        android:text="Tingkat"
                         android:textColor="@color/colorBlack"/>
                     <Spinner
+                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/spinnerClass"
@@ -127,39 +132,38 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_weight="1">
                     <TextView
+                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nama"
+                        android:text="Kelas"
                         android:textColor="@color/colorBlack"/>
                     <Spinner
+                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/spinnerKelas"
                         android:entries="@array/KELAS"/>
                 </LinearLayout>
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_rounded_white">
-                <Button
-                    android:layout_margin="5dp"
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="PDF"
-                    android:textColor="@color/colorWhite"
-                    android:id="@+id/btnDownload"
-                    android:background="@drawable/button_rounded_danger"/>
-            </LinearLayout>
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:layout_margin="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PDF"
+                        android:textColor="@color/colorWhite"
+                        android:id="@+id/btnDownload"
+                        android:background="@color/colorRed"/>
+                </LinearLayout>
 
-        </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"

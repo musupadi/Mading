@@ -1,17 +1,33 @@
 package com.destinyapp.mading.Model;
 
+import android.content.Context;
+import android.widget.Toast;
+
+import com.destinyapp.mading.API.ApiRequest;
+import com.destinyapp.mading.API.RetroServer;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Musupadi {
-    public String LinkJadwalPelajaran(String idKelas,String idJurusan){
-        String link = "http://mading.rumahcantikratu.com/Jadwal/Pdfmobile?id_jurusan="+idJurusan+"&id_kelas="+idKelas+"";
+    public String LinkJadwalPelajaran(String idKelas,String idJurusan,String hari){
+        String link = "http://mading.rumahcantikratu.com/Jadwal/Pdfmobile2?id_jurusan="+idJurusan+"&id_kelas="+idKelas+"&hari="+hari;
+        return link;
+    }
+    public String LinkJadwalUjian(String idKelas,String idJurusan,String jenis_ujian){
+        String link = "http://mading.rumahcantikratu.com/Ujian/SearchPDF?id_jurusan="+idJurusan+"&id_kelas="+idKelas+"&jenis_ujian="+jenis_ujian;
         return link;
     }
     public String LinkUjian(){
@@ -185,5 +201,10 @@ public class Musupadi {
             data = string.substring(0,70);
         }
         return data+"...";
+    }
+    public String getThisDate(){
+        DateFormat df = new SimpleDateFormat("yy-MM-dd");
+        Date dateobj = new Date();
+        return df.format(dateobj);
     }
 }

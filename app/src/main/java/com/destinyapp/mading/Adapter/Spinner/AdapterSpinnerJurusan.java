@@ -44,7 +44,7 @@ public class AdapterSpinnerJurusan extends ArrayAdapter<DataModel> {
         DataModel currentItem = getItem(position);
 
         if (currentItem != null) {
-            textSpinner.setText(currentItem.getNama_jurusan());
+            textSpinner.setText("  "+currentItem.getNama_jurusan());
             textId.setText(currentItem.getId_jurusan());
         }
 

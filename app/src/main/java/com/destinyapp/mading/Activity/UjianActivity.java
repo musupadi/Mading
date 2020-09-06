@@ -44,13 +44,32 @@ public class UjianActivity extends AppCompatActivity implements DatePickerDialog
     private AdapterSpinnerKelas aKelas;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mManager;
-    Spinner Jurusan,Kelas,Hari,Program,Class;
+    Spinner Jurusan,Kelas,Hari,Program,Class,Jenis;
     RecyclerView recyclerView;
     TextView IdJurusan,IDKelas;
     Button tanggal,download;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ApiRequest api = RetroServer.getClient().create(ApiRequest.class);
+        Call<ResponseModel> data = api.TahunAjaran();
+        data.enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                try {
+                    getSupportActionBar().setTitle("Jadwal Ujian T/A "+response.body().getData().get(0).tahun);
+                }catch (Exception e){
+                    getSupportActionBar().setTitle("Jadwal Ujian T/A 2020/2021");
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                getSupportActionBar().setTitle("Jadwal Kuliah T/A 2020/2021");
+                Toast.makeText(UjianActivity.this, "Koneksi Gagal", Toast.LENGTH_SHORT).show();
+            }
+        });
         setContentView(R.layout.activity_ujian);
         Jurusan = findViewById(R.id.spinnerJurusan);
         Kelas = findViewById(R.id.spinnerKelas);
@@ -60,7 +79,8 @@ public class UjianActivity extends AppCompatActivity implements DatePickerDialog
         IDKelas = findViewById(R.id.idKelas);
         Program = findViewById(R.id.spinnerProgram);
         Class = findViewById(R.id.spinnerClass);
-        tanggal = findViewById(R.id.btnTanggal);
+        Jenis = findViewById(R.id.spinnerJenisUjian);
+//        tanggal = findViewById(R.id.btnTanggal);
         download = findViewById(R.id.btnDownload);
         final Musupadi method = new Musupadi();
         getJurusan();
@@ -82,7 +102,7 @@ public class UjianActivity extends AppCompatActivity implements DatePickerDialog
                         String clickedItems = clickedItem.getId_kelas();
                         IDKelas.setText(clickedItems);
 //                        logic(IdJurusan.getText().toString(),IDKelas.getText().toString(),Hari.getSelectedItem().toString());
-                        Logic(IdJurusan.getText().toString(),IDKelas.getText().toString(),"");
+                        Logic(IdJurusan.getText().toString(),IDKelas.getText().toString(),"",Jenis.getSelectedItem().toString());
                     }
 
                     @Override
@@ -90,7 +110,7 @@ public class UjianActivity extends AppCompatActivity implements DatePickerDialog
 
                     }
                 });
-                Logic(IdJurusan.getText().toString(),IDKelas.getText().toString(),"");
+                Logic(IdJurusan.getText().toString(),IDKelas.getText().toString(),"",Jenis.getSelectedItem().toString());
             }
 
             @Override
@@ -98,16 +118,27 @@ public class UjianActivity extends AppCompatActivity implements DatePickerDialog
 
             }
         });
-        tanggal.setOnClickListener(new View.OnClickListener() {
+        Jenis.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                showDatePicker();
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Logic(IdJurusan.getText().toString(),IDKelas.getText().toString(),"",Jenis.getSelectedItem().toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
+//        tanggal.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                showDatePicker();
+//            }
+//        });
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(method.LinkUjian()));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(method.LinkJadwalUjian(IDKelas.getText().toString(),IdJurusan.getText().toString(),Jenis.getSelectedItem().toString())));
                 startActivity(browserIntent);
             }
         });
@@ -126,12 +157,12 @@ public class UjianActivity extends AppCompatActivity implements DatePickerDialog
         String date = year+"-"+month+"-"+day;
         Musupadi musupadi = new Musupadi();
         tanggal.setText(musupadi.getDataTanggal(day+"/"+month+"/"+year)+", "+day+"-"+month+"-"+year);
-        Logic(IdJurusan.getText().toString(),IDKelas.getText().toString(),date);
+        Logic(IdJurusan.getText().toString(),IDKelas.getText().toString(),date,Jenis.getSelectedItem().toString());
     }
-    private void Logic(final String jurusan, final String kelas,final String tanggal){
+    private void Logic(final String jurusan, final String kelas,final String tanggal,final String jenis){
         recyclerView.setLayoutManager(new GridLayoutManager(UjianActivity.this, 1));
         ApiRequest api = RetroServer.getClient().create(ApiRequest.class);
-        Call<ResponseModel> Data = api.JadwalUjian(jurusan,kelas,tanggal);
+        Call<ResponseModel> Data = api.JadwalUjian(jurusan,kelas,tanggal,jenis);
         Data.enqueue(new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
