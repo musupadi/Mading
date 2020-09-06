@@ -94,8 +94,6 @@ public class PelajaranActivity extends AppCompatActivity {
             Hari.setSelection(4);
         }else if(method.getToday().equals("Sabtu")){
             Hari.setSelection(5);
-        }else if(method.getToday().equals("Minggu")){
-            Hari.setSelection(6);
         }
         Hari.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

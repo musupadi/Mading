@@ -48,6 +48,8 @@ public class AdapterPelajaran extends RecyclerView.Adapter<AdapterPelajaran.Hold
         holderData.dosen.setText(dm.getNama_dosen());
         holderData.Kelas.setText(": "+dm.getProgram()+" "+dm.getClassy()+"-"+dm.getNama_kelas());
         holderData.jamke.setText(": "+String.valueOf(posistion+1));
+        holderData.sks.setText(": "+dm.getSks());
+        holderData.ruang.setText(": "+dm.getNama_ruang());
         holderData.dm=dm;
     }
 
@@ -57,7 +59,7 @@ public class AdapterPelajaran extends RecyclerView.Adapter<AdapterPelajaran.Hold
     }
 
     class HolderData extends RecyclerView.ViewHolder{
-        TextView matakuliah,mulai,selesai,dosen,jamke,Kelas;
+        TextView matakuliah,mulai,selesai,dosen,jamke,Kelas,sks,ruang;
         ImageView gambar;
         DataModel dm;
         HolderData(View v){
@@ -68,6 +70,8 @@ public class AdapterPelajaran extends RecyclerView.Adapter<AdapterPelajaran.Hold
             selesai = v.findViewById(R.id.tvSelesai);
             dosen = v.findViewById(R.id.tvDosen);
             jamke = v.findViewById(R.id.tvJamke);
+            sks = v.findViewById(R.id.tvSks);
+            ruang = v.findViewById(R.id.tvRuang);
         }
     }
 }

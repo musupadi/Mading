@@ -48,6 +48,7 @@ public class AdapterUjian extends RecyclerView.Adapter<AdapterUjian.HolderData> 
         holderData.Kelas.setText(": "+dm.getProgram()+" "+dm.getClassy()+"-"+dm.getNama_kelas());
         holderData.jenis.setText(": "+dm.getJenis_ujian());
         holderData.tanggal.setText(": "+method.getDataTanggal(method.formatTanggal(dm.getTanggal()))+", "+dm.getTanggal());
+        holderData.sks.setText(": "+dm.getSks());
         holderData.dm=dm;
     }
 
@@ -57,7 +58,7 @@ public class AdapterUjian extends RecyclerView.Adapter<AdapterUjian.HolderData> 
     }
 
     class HolderData extends RecyclerView.ViewHolder{
-        TextView matakuliah,mulai,selesai,dosen,jenis,Kelas,tanggal;
+        TextView matakuliah,mulai,selesai,dosen,jenis,Kelas,tanggal,sks;
         ImageView gambar;
         DataModel dm;
         HolderData(View v){
@@ -69,6 +70,7 @@ public class AdapterUjian extends RecyclerView.Adapter<AdapterUjian.HolderData> 
             dosen = v.findViewById(R.id.tvDosen);
             jenis = v.findViewById(R.id.tvJenis);
             tanggal = v.findViewById(R.id.tvTanggal);
+            sks = v.findViewById(R.id.tvSKS);
         }
     }
 }

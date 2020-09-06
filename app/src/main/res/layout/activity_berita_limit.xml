@@ -31,13 +31,12 @@
 
     </androidx.recyclerview.widget.RecyclerView>
     <Button
+        android:background="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/button_rounded_white"
+        android:layout_margin="10dp"
         android:layout_alignParentBottom="true"
         android:text="Seluruh Berita"
-        android:textColor="@color/colorPrimary
-"
+        android:textColor="@color/colorPrimary"
         android:id="@+id/btnAllBerita"/>
 </RelativeLayout>

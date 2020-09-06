@@ -115,6 +115,12 @@ public class DataModel {
     @Expose
     public String selesai;
 
+    @SerializedName("sks")
+    @Expose
+    public String sks;
+
+
+
     //Ruang
     @SerializedName("id_ruang")
     @Expose
@@ -433,5 +439,13 @@ public class DataModel {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getSks() {
+        return sks;
+    }
+
+    public void setSks(String sks) {
+        this.sks = sks;
     }
 }

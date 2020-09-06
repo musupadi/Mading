@@ -15,7 +15,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:padding="5dp"
         android:id="@+id/LayoutCardView"
         android:orientation="vertical">
@@ -119,6 +119,42 @@
                         android:text=": 08:00"
                         android:layout_weight="1"
                         android:id="@+id/tvSelesai"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SKS"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=": 2"
+                        android:layout_weight="1"
+                        android:id="@+id/tvSks"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ruang"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=": 08:00"
+                        android:layout_weight="1"
+                        android:id="@+id/tvRuang"/>
                 </LinearLayout>
             </LinearLayout>
 
