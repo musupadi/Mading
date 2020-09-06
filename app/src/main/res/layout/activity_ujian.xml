@@ -125,7 +125,7 @@
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Kelas"
+                        android:text="Tingkat"
                         android:textFontWeight="1"
                         android:textColor="@color/colorBlack"/>
                     <Spinner
@@ -143,7 +143,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nama"
+                        android:text="Kelas"
                         android:layout_weight="1"
                         android:textColor="@color/colorBlack"/>
                     <Spinner
