@@ -161,6 +161,23 @@ public class DataModel {
     @Expose
     public String tahun;
 
+    //Pengumuman
+    @SerializedName("id_pengumuman")
+    @Expose
+    public String id_pengumuman;
+
+    @SerializedName("judul_pengumuman")
+    @Expose
+    public String judul_pengumuman;
+
+    @SerializedName("gambar_pengumuman")
+    @Expose
+    public String gambar_pengumuman;
+
+    @SerializedName("tanggal_pengumuman")
+    @Expose
+    public String tanggal_pengumuman;
+
     public String getTahun() {
         return tahun;
     }
@@ -447,5 +464,37 @@ public class DataModel {
 
     public void setSks(String sks) {
         this.sks = sks;
+    }
+
+    public String getId_pengumuman() {
+        return id_pengumuman;
+    }
+
+    public void setId_pengumuman(String id_pengumuman) {
+        this.id_pengumuman = id_pengumuman;
+    }
+
+    public String getJudul_pengumuman() {
+        return judul_pengumuman;
+    }
+
+    public void setJudul_pengumuman(String judul_pengumuman) {
+        this.judul_pengumuman = judul_pengumuman;
+    }
+
+    public String getGambar_pengumuman() {
+        return gambar_pengumuman;
+    }
+
+    public void setGambar_pengumuman(String gambar_pengumuman) {
+        this.gambar_pengumuman = gambar_pengumuman;
+    }
+
+    public String getTanggal_pengumuman() {
+        return tanggal_pengumuman;
+    }
+
+    public void setTanggal_pengumuman(String tanggal_pengumuman) {
+        this.tanggal_pengumuman = tanggal_pengumuman;
     }
 }

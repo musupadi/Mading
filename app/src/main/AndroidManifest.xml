@@ -11,10 +11,18 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activity.FullScreenImgActivity"
+            android:theme="@style/AppThemeNoAction"></activity>
+        <activity android:name=".Activity.PengumumanActivity"
+            android:label="Seluruh Pengumuman"
+            android:parentActivityName=".Activity.PengumumanLimitActivity"/>
+        <activity android:name=".Activity.PengumumanLimitActivity"
+            android:label="Pengumuman"
+            android:parentActivityName=".Activity.MainActivity"/>
         <activity
             android:name=".Activity.DetailBerita"
             android:label="Detail Berita"
-            android:parentActivityName=".Activity.BeritaActivity"></activity>
+            android:parentActivityName=".Activity.BeritaActivity" />
         <activity
             android:name=".Activity.ListPelajaranDetailActivity"
             android:parentActivityName=".Activity.PelajaranActivity" />

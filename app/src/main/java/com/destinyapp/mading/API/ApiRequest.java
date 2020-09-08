@@ -18,6 +18,12 @@ public interface ApiRequest {
     @GET("Data/AllJurusan")
     Call<ResponseModel> AllJurusan();
 
+    @GET("Pengumuman/AllPengumuman")
+    Call<ResponseModel> AllPengumuman();
+
+    @GET("Pengumuman/Pengumuman")
+    Call<ResponseModel> Pengumuman();
+
 
     @GET("Berita/AllBerita")
     Call<ResponseModel> AllBerita();

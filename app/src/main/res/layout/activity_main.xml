@@ -259,7 +259,7 @@
                                 <com.airbnb.lottie.LottieAnimationView
                                     android:layout_weight="1"
                                     app:lottie_loop="true"
-                                    app:lottie_fileName="student.json"
+                                    app:lottie_fileName="notification.json"
                                     app:lottie_autoPlay="true"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent">
@@ -269,7 +269,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="3"
-                                    android:text="About"
+                                    android:text="Pengumuman"
                                     android:textColor="@color/colorBlack"
                                     android:textStyle="bold"
                                     android:gravity="center"/>

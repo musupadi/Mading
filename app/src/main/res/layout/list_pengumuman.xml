@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="5dp"
+        android:id="@+id/LayoutCardView"
+        android:orientation="vertical"
+        card_view:cardElevation="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        card_view:cardCornerRadius="4dp">
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_weight="2.5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="10sp"
+                android:text="2020-09-09"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:layout_margin="5dp"
+                android:id="@+id/tvTanggal"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/ivGambar"
+                android:scaleType="fitXY"/>
+            <TextView
+                android:layout_weight="2.3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="15sp"
+                android:text="Judul Pengumuman"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:id="@+id/tvJudul"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
