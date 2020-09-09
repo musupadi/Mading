@@ -25,7 +25,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?actionBarSize">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -290,5 +291,19 @@
                 android:textColor="@color/colorWhite"/>
         </LinearLayout>
     </ScrollView>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorWhite">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="TA : Try Wahyu Permana T"
+            android:gravity="center|left"
+            android:layout_margin="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
 </RelativeLayout>
