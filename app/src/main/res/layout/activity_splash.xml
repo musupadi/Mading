@@ -11,14 +11,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <ImageView
-            android:layout_weight="1"
-            android:layout_margin="20dp"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/logo_univ"/>
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo_univ"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:text="SELAMAT DATANG DI MAJALAH DINDING FTK UNIVERSITAS HARAPAN MEDAN"
+                android:textSize="20sp"
+                android:gravity="center|top">
+
+            </TextView>
+        </LinearLayout>
         <ImageView
-            android:layout_weight="2"
+            android:layout_weight="4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>
